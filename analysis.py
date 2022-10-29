@@ -1,19 +1,26 @@
 import csv
 def get_highest_gdp(data, year):
     highest = float(data[0][year])
+    highest_name = (data[0]["GeoName"])
     for row in data:
         val = float(row[year])
+        name = row["GeoName"]
         if val > highest:
-            highest_gdp = val
-    return highest
+            highest = val
+            highest_name = name 
+
+    return highest_name
 
 def get_lowest_gdp(data, year):
     lowest = float("inf")
+    lowest_name = (data[0]["GeoName"])
     for row in data:
         val = float(row[year])
+        name = row["GeoName"]
         if val < lowest:
             lowest = val
-    return lowest
+            lowest_name = name
+    return lowest_name
 
 
 
